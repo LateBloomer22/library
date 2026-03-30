@@ -1,40 +1,58 @@
-<!DOCTYPE html>
+<!DO name=""CTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="./main.js"></script>
+    <script src="./main.js" defer></script>
 </head>
 <body>
     <div class="container">
         <h1>Welcome to MyLibrary!</h1>
         <div class="addBookForm">
-            <p>Form to add Books</p>
-            <button>Add to Library</button>
+            <div class="form">
+                <div class="form-element">
+                    <label for="name">Name Of Book</label>
+                    <input name="name" type="text" id="name" placeholder="For eg: Harry Potter">
+                </div>
+                                
+                <div class="form-element">
+                    <label for="author">Author's Name</label>
+                    <input name="author" type="text" id="author" placeholder="For eg: JK Rowling">
+                </div>
+                                
+                <div class="form-element">
+                    <label for="pages">No. Of Pages</label>
+                    <input name="pages" type="number" id="pages" min="0" step="1" placeholder="564">
+                </div>
+                
+                <div class="form-element">
+                    <label for="readStatus">Read Status</label>
+                    <select name="readStatus" id="readStatus">
+                        <option value="Read" selected>Read</option>
+                        <option value="Not Read">Not Read</option>
+                    </select>
+                </div>
+            </div>
+            <button id="addBook">Add to Library</button>
         </div>
         <div class="cupBoard">
-            <p class="bookShelfTitle">My Book Shelf</p>
-            <table class="bookShelf">
-                <tr>
-                    <th>Serial No.</th>
-                    <th>Unique ID</th>
-                    <th>Name</th>
-                    <th>Author</th>
-                    <th>Pages</th>
-                    <th>Status</th>
-                    <th>Remove from shelf ?</th>
-                </tr>
-                <tr>
-                    <td>Sample text</td>
-                    <td>Sample text</td>
-                    <td>Sample text</td>
-                    <td>Sample text</td>
-                    <td>Sample text</td>
-                    <td>Sample text</td>
-                    <td>Sample text</td>
-                </tr>
+            <h3 class="bookShelfTitle">My Book Shelf</h3>
+            <table class="bookShelf" id="myTable">
+                <thead id="myTableHeading">
+                    <tr>
+                        <th>Serial No.</th>
+                        <th>Name</th>
+                        <th>Author</th>
+                        <th>Pages</th>
+                        <th>Status</th>
+                        <th>Remove from shelf ?</th>
+                    </tr>
+                </thead>
+                <tbody id="myTableBody">
+                    
+                </tbody>
             </table>
         </div>
         <div class="footer">
