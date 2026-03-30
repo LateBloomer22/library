@@ -1,7 +1,12 @@
 const myLibrary = [];
 const table = document.getElementById("myTableBody");
 const btn = document.getElementById("addBook");
-const rmvBtn = document.querySelectorAll('.remove');
+let rmvBtn = Array.from(document.querySelectorAll('.remove'));
+
+// Populate default data on page load
+document.addEventListener("DOMContentLoaded", () => {
+    defaultData();
+});
 
 let nameInput = document.querySelector('#name');
 let authorInput = document.querySelector('#author');
@@ -16,7 +21,13 @@ btn.addEventListener('click', () => {
     addBookToLibrary(name, author,pages, status);
     createTable(myLibrary);
     resetForm();
+    updateNodelist();
 })
+
+// Function to update nodelist of remove buttons
+function updateNodelist(){
+    rmvBtn = Array.from(document.querySelectorAll('.remove'));
+}
 
 // reset form for new inputs
 function resetForm(){
@@ -54,6 +65,18 @@ function createTable(arr) {
     });
 }
 
+// When i press remove button
+// It should remove that book from the book array
+// Update the display
+
 function removeBook(){
-    
+
+}
+
+// Default data
+function defaultData (){
+    addBookToLibrary("One up on Wallstreet","Peter Lynch", 304, "Read");
+    addBookToLibrary("Beyond Entrepreneurship 2.0","Jim Collins", 352, "Read");
+    addBookToLibrary("The Intelligent Investor","Ben graham", 608, "Read");
+    createTable(myLibrary);
 }
