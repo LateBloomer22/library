@@ -40,7 +40,7 @@ function createTable(arr) {
                             <td>${book.name}</td>
                             <td>${book.author}</td>
                             <td>${book.pages}</td>
-                            <td>${book.status}</td>
+                            <td>${book.readStatus}</td>
                             <td><button class="remove">Sample text</button></td>
                         </tr>`;
         // // const row = document.createElement('tr');
