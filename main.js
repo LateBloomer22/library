@@ -72,16 +72,16 @@ function createTable(arr) {
                             <td>${book.author}</td>
                             <td>${book.pages}</td>
                             <td>${book.readStatus}</td>
-                            <td><button data-key="${book.uniqueID}" onclick="removeBook(this)" class="remove">Remove</button></td>
+                            <td class="leftOption"><button data-key="${book.uniqueID}" onclick="removeBook(this)" class="remove">Remove</button></td>
                         </tr>`;
         table.innerHTML += template;
     });
 }
 
+
 // When i press remove button
 // It should remove that book from the book array
 // Update the display
-
 function removeBook(button){
     let val = button.getAttribute('data-key');
     let index = myLibrary.findIndex(book => book.uniqueID == val);
