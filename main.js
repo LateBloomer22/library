@@ -1,6 +1,7 @@
 const myLibrary = [];
 const table = document.getElementById("myTableBody");
 const btn = document.getElementById("addBook");
+const rmvBtn = document.querySelectorAll('.remove');
 
 let nameInput = document.querySelector('#name');
 let authorInput = document.querySelector('#author');
@@ -14,7 +15,13 @@ btn.addEventListener('click', () => {
     let status = readStatusInput.value;
     addBookToLibrary(name, author,pages, status);
     createTable(myLibrary);
+    resetForm();
 })
+
+// reset form for new inputs
+function resetForm(){
+    document.getElementById('form').reset();
+}
 
 // the constructor to create the book object
 function Book(name, author, pages, status) {
@@ -41,25 +48,12 @@ function createTable(arr) {
                             <td>${book.author}</td>
                             <td>${book.pages}</td>
                             <td>${book.readStatus}</td>
-                            <td><button class="remove">Sample text</button></td>
+                            <td><button data-key="${book.uniqueID}" class="remove">Remove</button></td>
                         </tr>`;
-        // // const row = document.createElement('tr');
-        // const row = table.insertRow(-1);
-        // const serial = document.createElement('td');
-        // serial.textContent = index + 1;
-        // console.log(serial.textContent);
-        // row.appendChild(serial);
-        // for (const [key, value] of Object.entries(book)) {
-        //     if(key == "uniqueID") return;
-        //     //else console.log(`${key}: ${value}`);
-        //     else {
-        //         const cell = document.createElement('td');
-        //         cell.textContent = value;
-        //         console.log(value);
-        //         row.appendChild(cell);
-        //     }
-        // } 
-        // table.appendChild(row);
         table.innerHTML += template;
     });
+}
+
+function removeBook(){
+    
 }

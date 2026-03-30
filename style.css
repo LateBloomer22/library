@@ -24,18 +24,15 @@ body {
 }
 
 .addBookForm {
-    width: 70%;
     display: flex;
     margin-top: 40px;
     gap: 20px;
     justify-content: center;
-    /* position: absolute; */
 }
 
 .form {
     display: flex;
     gap: 20px;
-    /* justify-content: space-evenly; */
 }
 
 .form-element{
@@ -62,7 +59,7 @@ th, td {
     padding: 5px 0px;
 }
 
-#addBtn {
+button {
     padding: 10px;
 }
 

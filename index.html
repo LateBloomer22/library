@@ -11,7 +11,7 @@
     <div class="container">
         <h1>Welcome to MyLibrary!</h1>
         <div class="addBookForm">
-            <div class="form">
+            <form class="form" id="form">
                 <div class="form-element">
                     <label for="name">Name Of Book</label>
                     <input name="name" type="text" id="name" placeholder="For eg: Harry Potter">
@@ -34,7 +34,7 @@
                         <option value="Not Read">Not Read</option>
                     </select>
                 </div>
-            </div>
+            </form>
             <button id="addBook">Add to Library</button>
         </div>
         <div class="cupBoard">
@@ -51,7 +51,14 @@
                     </tr>
                 </thead>
                 <tbody id="myTableBody">
-                    
+                    <tr>
+                        <td>1</td>
+                        <td>Test Name</td>
+                        <td>Test author</td>
+                        <td>600</td>
+                        <td>Read</td>
+                        <td><button class="remove">Remove</button></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
