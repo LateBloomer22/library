@@ -73,6 +73,7 @@ function createTable(arr) {
                             <td>${book.pages}</td>
                             <td>${book.readStatus}</td>
                             <td class="leftOption"><button data-key="${book.uniqueID}" onclick="removeBook(this)" class="remove">Remove</button></td>
+                            <td class="rightOption"><button data-key="${book.uniqueID}" onclick="editBook(this)" class="edit">Edit</button></td>
                         </tr>`;
         table.innerHTML += template;
     });
